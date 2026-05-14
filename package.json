@@ -4,8 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+    "web:dev": "pnpm --dir apps/web dev",
+    "web:build": "pnpm --dir apps/web build",
+    "web:lint": "pnpm --dir apps/web lint",
+    "api:dev": "cd apps/api && .venv\\Scripts\\python.exe -m uvicorn main:app --reload",
+    "docker:up": "docker compose up -d",
+    "docker:down": "docker compose down"
+  }
   "keywords": [],
   "author": "",
   "license": "MIT",
