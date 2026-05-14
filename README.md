@@ -1,6 +1,6 @@
 # Northstar Invest
 
-Northstar Invest is a personal investing workspace for portfolio tracking, watchlists, cash balances, and safe trade simulation.
+Northstar Invest is a personal investing workstation for portfolio tracking, watchlists, cash balances, deterministic risk rules, and portfolio impact simulation. Invest Mode exists today; Trade Mode and Market Mode are planned as separate product areas.
 
 ## Stack
 
@@ -78,9 +78,19 @@ pnpm web:dev
 - Portfolios
 - Holdings
 - Watchlist items
-- Fake trade simulation
+- Portfolio impact simulation
 - Cash balances
 - Portfolio summary estimates
+- Portfolio rules and risk checks
+
+## Product Modes
+
+- Invest Mode: dashboard, portfolios, watchlist, portfolio review, Portfolio Impact Simulator, and risk rules.
+- Trade Mode: planned trading simulator with charts, order tickets, long and short simulated positions, trade history, and performance statistics.
+- Market Mode: planned market conditions, trend monitoring, regime detection, and symbol exploration.
+- System: planned agent logs and settings.
+
+The current simulation feature is the Portfolio Impact Simulator. It previews hypothetical portfolio actions without mutating holdings or executing orders. The future Trading Simulator is a separate module for simulated trading practice and PnL tracking.
 
 ## Notes
 

@@ -4,7 +4,7 @@ import { EmptyState } from "./EmptyState";
 
 export function FakeTradesTable({ fakeTrades }: { fakeTrades: FakeTrade[] }) {
   if (fakeTrades.length === 0) {
-    return <EmptyState message="No fake trades saved yet." />;
+    return <EmptyState message="No saved impact simulations yet." />;
   }
 
   return (

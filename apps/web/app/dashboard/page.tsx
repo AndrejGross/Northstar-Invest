@@ -125,7 +125,7 @@ export default async function DashboardPage() {
           </Section>
         </div>
 
-        <Section title="Fake Trades">
+        <Section title="Saved Impact Simulations">
           <FakeTradesTable fakeTrades={fakeTrades} />
         </Section>
       </div>

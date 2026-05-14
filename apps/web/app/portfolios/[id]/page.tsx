@@ -107,7 +107,7 @@ export default async function PortfolioDetailPage({
         </Section>
       </div>
 
-      <Section title="Fake Trades">
+      <Section title="Saved Impact Simulations">
         <FakeTradesTable fakeTrades={fakeTrades} />
       </Section>
     </div>

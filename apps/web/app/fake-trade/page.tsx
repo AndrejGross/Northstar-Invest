@@ -10,7 +10,7 @@ export default async function FakeTradePage() {
     return (
       <div className="space-y-6">
         <h1 className="text-2xl font-semibold text-slate-950">
-          Fake Trade Preview
+          Portfolio Impact Simulator
         </h1>
         <div className="rounded-md border border-red-200 bg-red-50 p-4 text-sm text-red-700">
           {result.error instanceof Error
@@ -27,10 +27,11 @@ export default async function FakeTradePage() {
     <div className="space-y-6">
       <div>
         <h1 className="text-2xl font-semibold text-slate-950">
-          Fake Trade Preview
+          Portfolio Impact Simulator
         </h1>
         <p className="mt-1 text-sm text-slate-600">
-          Simulate a buy or sell without mutating actual holdings.
+          Preview how a buy or sell would affect portfolio weights without
+          mutating actual holdings.
         </p>
       </div>
       {portfolios.length === 0 ? (

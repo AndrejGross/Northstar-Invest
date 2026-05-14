@@ -1,14 +1,14 @@
 # Investment Platform MVP
 
 ## Goal
-Build a broker-agnostic investing platform with a web dashboard for portfolio analysis, fake trades, portfolio-fit reviews, and market trend/regime monitoring.
+Build a broker-agnostic investing platform with a web dashboard for portfolio analysis, portfolio impact simulations, portfolio-fit reviews, and market trend/regime monitoring.
 
 ## MVP Features
 1. Portfolio creation
 2. Manual holdings and cash
 3. Watchlist
 4. Stock/ETF portfolio-fit review
-5. Fake trade simulator
+5. Portfolio Impact Simulator
 6. Market trend monitor
 7. Market regime monitor
 8. Agent logs and explanations
@@ -26,7 +26,7 @@ Build a broker-agnostic investing platform with a web dashboard for portfolio an
 - Portfolio
 - Watchlist
 - Review
-- Fake Trade Simulator
+- Portfolio Impact Simulator
 - Market Conditions
 - Agent Logs
 - Settings
@@ -35,7 +35,7 @@ Build a broker-agnostic investing platform with a web dashboard for portfolio an
 - portfolio-service
 - market-data-service
 - review-engine
-- fake-trade-engine
+- portfolio-impact-simulator
 - trend-monitor
 - regime-detector
 - regime-validator
@@ -49,7 +49,7 @@ Build a broker-agnostic investing platform with a web dashboard for portfolio an
 - Watchlist
 - Symbol
 - ETFProfile
-- FakeTrade
+- PortfolioImpactScenario
 - AnalysisReport
 - AgentDecision
 - MarketSignal
@@ -59,7 +59,7 @@ Build a broker-agnostic investing platform with a web dashboard for portfolio an
 ## Success Criteria
 - Portfolio can be created and viewed
 - Holdings can be added
-- Fake trades can be simulated
+- Portfolio impact scenarios can be simulated
 - Stock/ETF fit can be reviewed
 - Market condition can be displayed
 - System explains its reasoning
