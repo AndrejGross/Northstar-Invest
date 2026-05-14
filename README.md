@@ -66,10 +66,10 @@ Planned modules include:
 
 Planned or current stack:
 
-- **Frontend:** React / Next.js or Vite
-- **Backend:** Node.js / Python / other service layer
+- **Frontend:** Next.js + TypeScript + Tailwind
+- **Backend:** FastAPI + SQLAlchemy + Alembic
 - **Database:** PostgreSQL
-- **Market data APIs:** TBD
+- **Cache:** Redis
 - **Visualization:** charts, metrics, portfolio views, event streams
 - **Deployment:** TBD
 
