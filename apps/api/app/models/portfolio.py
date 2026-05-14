@@ -9,8 +9,10 @@ from sqlalchemy.orm import Mapped, mapped_column, relationship
 from app.db.base import Base
 
 if TYPE_CHECKING:
+    from app.models.cash_balance import CashBalance
     from app.models.fake_trade import FakeTrade
     from app.models.holding import Holding
+    from app.models.portfolio_rule import PortfolioRule
     from app.models.watchlist import WatchlistItem
 
 
@@ -50,4 +52,15 @@ class Portfolio(Base):
         back_populates="portfolio",
         cascade="all, delete-orphan",
         passive_deletes=True,
+    )
+    cash_balances: Mapped[list["CashBalance"]] = relationship(
+        back_populates="portfolio",
+        cascade="all, delete-orphan",
+        passive_deletes=True,
+    )
+    rule: Mapped["PortfolioRule | None"] = relationship(
+        back_populates="portfolio",
+        cascade="all, delete-orphan",
+        passive_deletes=True,
+        uselist=False,
     )

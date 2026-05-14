@@ -13,7 +13,9 @@ from app.schemas.fake_trade import (
     FakeTradeSimulationResult,
     FakeTradeWithSimulation,
 )
+from app.schemas.portfolio_rule import RiskCheckInput
 from app.services.fake_trade_simulator import simulate_fake_trade
+from app.services.risk_engine import run_risk_check
 
 router = APIRouter(tags=["fake trades"])
 
@@ -38,7 +40,15 @@ def preview_fake_trade(
     db: Session = Depends(get_db),
 ) -> FakeTradeSimulationResult:
     portfolio = get_portfolio_or_404(portfolio_id, db)
-    return simulate_fake_trade(portfolio, trade_in, db)
+    simulation = simulate_fake_trade(portfolio, trade_in, db)
+    risk_result = run_risk_check(
+        portfolio,
+        RiskCheckInput.model_validate(trade_in.model_dump(exclude={"notes"})),
+        db,
+    )
+    simulation.warnings.extend(risk_result.warnings)
+    simulation.warnings.extend(risk_result.violations)
+    return simulation
 
 
 @router.post(
@@ -53,6 +63,13 @@ def create_fake_trade(
 ) -> FakeTradeWithSimulation:
     portfolio = get_portfolio_or_404(portfolio_id, db)
     simulation = simulate_fake_trade(portfolio, trade_in, db)
+    risk_result = run_risk_check(
+        portfolio,
+        RiskCheckInput.model_validate(trade_in.model_dump(exclude={"notes"})),
+        db,
+    )
+    simulation.warnings.extend(risk_result.warnings)
+    simulation.warnings.extend(risk_result.violations)
 
     fake_trade = FakeTrade(portfolio_id=portfolio_id, **trade_in.model_dump())
     db.add(fake_trade)

@@ -1,6 +1,6 @@
 {
   "name": "northstar-invest",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -10,7 +10,7 @@
     "api:dev": "cd apps/api && .venv\\Scripts\\python.exe -m uvicorn main:app --reload",
     "docker:up": "docker compose up -d",
     "docker:down": "docker compose down"
-  }
+  },
   "keywords": [],
   "author": "",
   "license": "MIT",

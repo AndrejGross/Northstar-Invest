@@ -1,7 +1,15 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from app.api.routes import fake_trades, health, holdings, portfolios, watchlist
+from app.api.routes import (
+    cash_balances,
+    fake_trades,
+    health,
+    holdings,
+    portfolio_rules,
+    portfolios,
+    watchlist,
+)
 from app.core.config import get_settings
 
 settings = get_settings()
@@ -23,6 +31,8 @@ app.include_router(portfolios.router)
 app.include_router(holdings.router)
 app.include_router(watchlist.router)
 app.include_router(fake_trades.router)
+app.include_router(cash_balances.router)
+app.include_router(portfolio_rules.router)
 
 
 @app.get("/")
