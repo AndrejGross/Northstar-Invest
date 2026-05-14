@@ -48,12 +48,12 @@ def simulate_fake_trade(
     else:
         if holding is None:
             raise HTTPException(
-                status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,
+                status_code=status.HTTP_422_UNPROCESSABLE_CONTENT,
                 detail=f"Cannot simulate sell: no holding exists for {trade_in.symbol}",
             )
         if trade_in.quantity > holding.quantity:
             raise HTTPException(
-                status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,
+                status_code=status.HTTP_422_UNPROCESSABLE_CONTENT,
                 detail=(
                     "Cannot simulate sell: requested quantity exceeds current "
                     f"holding quantity of {holding.quantity}"

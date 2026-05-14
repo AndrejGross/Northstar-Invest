@@ -8,6 +8,8 @@
     "web:build": "pnpm --dir apps/web build",
     "web:lint": "pnpm --dir apps/web lint",
     "api:dev": "cd apps/api && .venv\\Scripts\\python.exe -m uvicorn main:app --reload",
+    "api:test": "cd apps/api && .venv\\Scripts\\pytest.exe",
+    "api:seed": "cd apps/api && .venv\\Scripts\\python.exe scripts/seed_demo.py",
     "docker:up": "docker compose up -d",
     "docker:down": "docker compose down"
   },

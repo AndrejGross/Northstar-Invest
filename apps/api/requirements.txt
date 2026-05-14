@@ -4,3 +4,5 @@ psycopg[binary]
 python-dotenv
 alembic
 pydantic-settings
+pytest
+httpx

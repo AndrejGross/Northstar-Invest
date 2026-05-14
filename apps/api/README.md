@@ -2,10 +2,16 @@
 
 FastAPI backend for Northstar Invest.
 
+## Install Dependencies
+
+```powershell
+.\.venv\Scripts\python.exe -m pip install -r requirements.txt
+```
+
 ## Run the API
 
 ```powershell
-python -m uvicorn main:app --reload
+.\.venv\Scripts\python.exe -m uvicorn main:app --reload
 ```
 
 or:
@@ -47,3 +53,25 @@ alembic upgrade head
 ```
 
 Review generated migrations before applying them.
+
+## Seed Demo Data
+
+Run migrations first, then seed the demo portfolio:
+
+```powershell
+.\.venv\Scripts\alembic.exe upgrade head
+.\.venv\Scripts\python.exe scripts/seed_demo.py
+```
+
+The seed script safely resets only the `Demo Growth Portfolio` data.
+
+## Tests
+
+Tests require an isolated PostgreSQL database. Create one locally, then set `TEST_DATABASE_URL` before running pytest.
+
+```powershell
+$env:TEST_DATABASE_URL="postgresql+psycopg://postgres:postgres@localhost:5432/northstar_invest_test"
+.\.venv\Scripts\pytest.exe
+```
+
+The test harness recreates tables in the test database and truncates data between tests.

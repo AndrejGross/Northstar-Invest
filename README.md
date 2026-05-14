@@ -38,6 +38,28 @@ cd apps/api
 .\.venv\Scripts\alembic.exe upgrade head
 ```
 
+Install API dependencies:
+
+```powershell
+cd apps/api
+.\.venv\Scripts\python.exe -m pip install -r requirements.txt
+```
+
+Seed demo data:
+
+```powershell
+cd apps/api
+.\.venv\Scripts\python.exe scripts/seed_demo.py
+```
+
+Run backend tests:
+
+```powershell
+cd apps/api
+$env:TEST_DATABASE_URL="postgresql+psycopg://postgres:postgres@localhost:5432/northstar_invest_test"
+.\.venv\Scripts\pytest.exe
+```
+
 Run the API:
 
 ```powershell
