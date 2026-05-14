@@ -1,5 +1,5 @@
 {
-  "name": "Northstar-Invest",
+  "name": "northstar-invest",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -8,6 +8,7 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
-  "type": "module"
+  "license": "MIT",
+  "type": "module",
+  "private": true
 }
